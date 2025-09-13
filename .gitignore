@@ -1,0 +1,39 @@
+# Clojure / JVM
+*.class
+*.jar
+*.war
+*.ear
+
+# Clojure CLI compiled cache
+/.cpcache/
+
+# Build output
+/target/
+
+# REPL history
+/repl-history
+
+# Logs
+/logs/
+/*.log
+
+# clj-kondo
+/.clj-kondo/
+
+# LSP
+/.lsp/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor / IDE files
+/.idea/
+/.vscode/
+/*.swp
+/*.swo
+*.iml
+
+# Generated test runner (if compiled)
+test_runner.class
+
