@@ -18,7 +18,7 @@
 
 (defn start!
   ([port] (reset! server (http/run-server app {:port port}))
-          (println (format "Spiderling server running on port %d" port))))
+          (println (format "🟢 Spiderling server running on port %d" port))))
 
 (defn stop! []
   (when-let [s @server]
@@ -26,8 +26,10 @@
     (reset! server nil)
     (println "🛑 Spiderling server stopped.")))
 
-(defn -main [& [port]]
-  (let [port (Integer/parseInt (or port "8089"))]
+(def default-port 8089)
+
+(defn -main [{:keys [port]}]
+  (let [port  (or port default-port)]
     (start! port)
     ;; add shutdown hook
     (.addShutdownHook (Runtime/getRuntime)
