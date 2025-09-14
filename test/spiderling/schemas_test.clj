@@ -7,4 +7,5 @@
   (testing "Valid urls"
     (m/validate url-schema {:urls ["http://a.com"]})                   ;; ✅ valid
     (m/validate url-schema {:urls ["http://a.com"] :options {}})       ;; ✅ valid
-    (m/validate url-schema {:urls ["http://a.com"] :options {:max-workers 5}}))) ;; ✅ valid
+    (m/validate url-schema {:urls ["http://a.com"] :options {:max-workers 5}})
+    (m/validate url-schema {:urls ["https://c.it", "d.org"] :options {:max-workers 9}}))) ;; ✅ valid
